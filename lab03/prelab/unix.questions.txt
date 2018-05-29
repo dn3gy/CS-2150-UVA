@@ -1,0 +1,4 @@
+// Dion Niazi dn3gy 06 02 2017 unix.questions.txt
+1) Can you use the unix commands to hack someone's computer?
+2) Is the unix commands the same throughot all different 
+   versions of unix?
