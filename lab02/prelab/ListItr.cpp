@@ -13,15 +13,11 @@ ListItr::ListItr()
 ListItr::ListItr(ListNode *theNode)
 {
   current = theNode;
-  //  current->next = theNode->next;
-  // current->previous = theNode->previous;
 }
 /*Returns true if the iterator is currently pointing past the end position in
  the list (i.e., it's pointing to the dummy tail)*/
 bool ListItr::isPastEnd() const
 {
-  /* if(current == tail){ return true;}
-  return false;*/
   if(current->next==NULL){return true;}
   return false;
 }
@@ -31,9 +27,6 @@ bool ListItr::isPastBeginning() const
 {
   if(current->previous==NULL){ return true;}
   return false;
-  
-  //if(current->previous == NULL){return true;}
-  //return false;
 }
 /*Advances the current pointer to the next position in the list
   (unless already past the end of the list)*/

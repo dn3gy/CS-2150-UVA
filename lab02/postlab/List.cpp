@@ -60,7 +60,6 @@ void List::makeEmpty()
   ListNode *n = new ListNode();
  while(!position.isPastEnd())
     {
-      // current = head->next;
       n = position.current;
       position.moveForward();
       delete n;      

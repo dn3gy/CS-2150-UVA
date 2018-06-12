@@ -28,10 +28,10 @@ using namespace std;
 #include "ListItr.h"
 
 
-int      menu (string option[], int n_opt);
+int menu (string option[], int n_opt);
 
 //set up menu options
-string   option[] =   { "Quit",
+string option[] =   { "Quit",
                         "New List",
                         "Show List elements",
                         "Set ListItr with first()",
@@ -49,9 +49,9 @@ string   option[] =   { "Quit",
                         "Copy list with operator=",
                         "Make list empty",
                       };
-int      const n_choice = 17;
+int const n_choice = 17;
 
-int   main ()
+int main ()
 /*
 **  This main driver program interactively exercises a
 **   list package.

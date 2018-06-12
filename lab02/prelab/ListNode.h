@@ -15,7 +15,7 @@ class ListNode {
 public:
     ListNode();                 // Constructor
     ListNode(int val);          //one parameter constructor
-    ListNode(int val, ListNode *n, ListNode *p);
+    ListNode(int val, ListNode *n, ListNode *p); // 2 parameter constructor
     ListNode* getNext();
     ListNode* getPrevious();
 private:

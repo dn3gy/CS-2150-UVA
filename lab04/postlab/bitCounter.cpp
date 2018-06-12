@@ -11,6 +11,8 @@ int main(int argc, char **argv)
   int num = atof(argv[1]);
   cout<<numOfOnes(num)<<endl;
 }
+
+// recursive function that returns the number of 1's in the binary representation of n
 int numOfOnes(int n)
 {
   if(n==0){

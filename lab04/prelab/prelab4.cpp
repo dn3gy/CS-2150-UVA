@@ -48,7 +48,6 @@ void outputBinary(unsigned int bin)
     }
     else{
       s+="0";
-      // cout<< bin<<endl;
     }
     if(i%4==0)
       s+=" ";
@@ -57,12 +56,9 @@ void outputBinary(unsigned int bin)
 }
 void overflow()
 {
- // unsigned int num =  numeric_limits<unsigned int>::max()+1;
-  //cout<< num << endl;
   unsigned int n = UINT_MAX + 1;
   cout << n << endl;
-  /* cout<< "The reason why an unsigned max int added by 1 is just the number add   by is one is because when it went over the memory that it was allocated to, i  t switched from 32 bits to 64 bits to hold the integer value."<<endl;
-  */cout << "The reason why an unsigned max int added by 1 is just 0 is because\
+  cout << "The reason why an unsigned max int added by 1 is just 0 is because\
  the 32 bits  that were allocated for the max unsigned int was filled for the\
  max int and then  adding 1 caused an integer overflow and made the computer\
  delete all the bits  to handle the overflow and go back to 0"<<endl;

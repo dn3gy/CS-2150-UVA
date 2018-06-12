@@ -3,10 +3,12 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
 //---------------------------------------------------------- prototypes
 MyObject getMaxMyObj(const MyObject o1, const MyObject o2);
 int cmpMyObj(const MyObject o1, const MyObject o2);
 void swapMyObj(MyObject& o1, MyObject& o2);
+
 int main () {
   cout << "--PART 1: Start of main--" << endl;
   cout << "--Defining o1, o2(Bob)--" << endl;

@@ -1,12 +1,12 @@
 // Dion Niazi dn3gy 07 02 2017 testPostFixCalc.cpp
 #include <iostream>
-#include "post.h"
+#include "postfixCalculator.h"
 #include <string>
 #include <sstream>
 #include <cstdlib>
 using namespace std;
 int main() {
-  PostFixCalculato p;
+  PostFixCalculator p;
   while(cin.good()){
     string str;
     cin >> str;
@@ -31,7 +31,7 @@ int main() {
 	  p.neg();
         }
     }
-  if(p.total.empty())
+  if(p.total->empty())
 	exit(-1);
   cout << "Result is: " << p.getTopValue() << endl;
   return 0;

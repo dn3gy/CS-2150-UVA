@@ -1,3 +1,4 @@
+// Dion Niazi dn3gy 07 02 2017 stack.h
 #ifndef STACK_H
 #define STACK_H
 
@@ -6,9 +7,7 @@
 #include "List.h"
 #include "ListItr.h"
 #include "postfixCalculator.h"
-//#include "stackNode.h"
 using namespace std;
-//class StackNode;
 
 class Stack {
  public:
@@ -24,9 +23,5 @@ class Stack {
   int count;
   List *stack;
   ListItr itr;
-  //StackNode *head;
-  //StackNode *topp;
-  //friend class StackNode;
 };
-//void print();
 #endif

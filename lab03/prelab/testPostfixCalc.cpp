@@ -4,7 +4,7 @@
 using namespace std;
 int main() {
   PostFixCalculator p;
-  /*  p.pushNum (1);
+  p.pushNum (1);
   p.pushNum (2);
   p.pushNum (3);
   p.pushNum (4);
@@ -12,7 +12,8 @@ int main() {
   p.add();
   p.add();
   p.add();
-  p.add();*/
+  p.add();
+  cout << "Result is: " << p.getTopValue() << endl;
   p.pushNum(3);
   p.pushNum(6);
   p.add();
@@ -20,7 +21,8 @@ int main() {
   p.pushNum(4);
   p.div();
   p.sub();
-  /*  p.pushNum(20);
+  cout << "Result is: " << p.getTopValue() << endl;
+  p.pushNum(20);
   p.pushNum(10);
   p.sub();
   p.pushNum(-3);
@@ -28,8 +30,9 @@ int main() {
   p.sub();
   p.sub();
   p.pushNum(2);
-  p.sub();*/
-  /*  p.pushNum(-1);
+  p.sub();
+  cout << "Result is: " << p.getTopValue() << endl;
+  p.pushNum(-1);
   p.pushNum(-2);
   p.pushNum(-5);
   p.pushNum(3);
@@ -39,8 +42,9 @@ int main() {
   p.mult();
   p.mult();
   p.mult();
-  p.mult();*/
-  /*  p.pushNum(-1512);
+  p.mult();
+  cout << "Result is: " << p.getTopValue() << endl;
+  p.pushNum(-1512);
   p.pushNum(-12);
   p.pushNum(-2);
   p.div();
@@ -48,11 +52,12 @@ int main() {
   p.pushNum(-2);
   p.div();
   p.pushNum(3);
-  p.div();*/
- /* p.pushNum(-1);
+  p.div();
+  cout << "Result is: " << p.getTopValue() << endl;
+  p.pushNum(-1);
   p.neg();
   p.neg();
-  p.neg();*/
+  p.neg();
   cout << "Result is: " << p.getTopValue() << endl;
   return 0;
 }

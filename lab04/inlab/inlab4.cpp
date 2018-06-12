@@ -36,30 +36,6 @@ int main()
   char CharArray[10] = {'a','b','c','d','e','f','g','h','i','j'};
   int IntArray2D[6][5] = {{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15}};
   char CharArray2D[6][5] = {{'a','b','c','d','e'},{'f','g','h','i','j'}};
-  
-  /*  int IntArray2D[6] [5];
-  cout << &IntArray2D<<endl;
-  cout << &(IntArray2D[0][0])<<endl;
-  cout << &(IntArray2D[0][1])<<endl;
-  cout << &(IntArray2D[0][2])<<endl;
-  cout << &(IntArray2D[0][3])<<endl;
-  cout << &(IntArray2D[0][4])<<endl;
-  cout << &(IntArray2D[1][0])<<endl;
-  cout << &(IntArray2D[2][2])<<endl;*/
-  // cout << numeric_limits<bool>::max()<<endl;
-  // int* num= NULL;
-  // double* db = NULL;
-  //char* ch = NULL;
-  //bool s = true;
-  //sizeOfTest();
-  //cout << db<<endl;
-  // cout<< ch <<endl;
-  // cout << s <<endl;
-  //cin >> num;
-  //bar.n = num;
-  // cout << num<<endl;
-  // outputBinary(num);
-  // overflow();
   return 0;
 }
 void sizeOfTest()
@@ -93,7 +69,6 @@ void outputBinary(unsigned int bin)
     }
     else{
       s+="0";
-      // cout<< bin<<endl;
     }
     if(i%4==0)
       s+=" ";
@@ -102,12 +77,9 @@ void outputBinary(unsigned int bin)
 }
 void overflow()
 {
- // unsigned int num =  numeric_limits<unsigned int>::max()+1;
-  //cout<< num << endl;
   unsigned int n = UINT_MAX;
   cout << n << endl;
-  /* cout<< "The reason why an unsigned max int added by 1 is just the number add   by is one is because when it went over the memory that it was allocated to, i  t switched from 32 bits to 64 bits to hold the integer value."<<endl;
-  */cout << "The reason why an unsigned max int added by 1 is just 0 is because\
+  cout << "The reason why an unsigned max int added by 1 is just 0 is because\
  the 32 bits  that were allocated for the max unsigned int was filled for the\
  max int and then  adding 1 caused an integer overflow and made the computer\
  delete all the bits  to handle the overflow and go back to 0"<<endl;
