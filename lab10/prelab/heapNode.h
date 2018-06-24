@@ -24,20 +24,4 @@ private:
     int count;
     friend class heap;
 };
-    /*void insert(int x);
-    int findMin();
-    int deleteMin();
-    unsigned int size();
-    void makeEmpty();
-    bool isEmpty();
-    void print();
-
-private:
-    vector<int> heap;
-    unsigned int heap_size;
-
-    void percolateUp(int hole);
-    void percolateDown(int hole);
-};
-    */
 #endif

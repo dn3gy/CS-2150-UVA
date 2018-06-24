@@ -47,7 +47,6 @@ int main (int argc, char **argv) {
              << prefix << "'" << endl;
 	fixTree(root,prefix,character[0]);
     }
-    //    cout<< root->right->left->right->getAlpha()<<endl;
     // read in the second section of the file: the encoded message
     stringstream sstm;
     while ( true ) {
@@ -79,8 +78,6 @@ int main (int argc, char **argv) {
 	e+=trav(k,allbits[i]);
 	k=root;
       }
-      //cout<<trav(root,allbits)<<endl; 
-
     }
     cout<<"--------------------------------------"<<endl;
     cout<<e<<endl;
@@ -88,7 +85,6 @@ int main (int argc, char **argv) {
 void fixTree(heapNode* node,string code,char c)
 {
   int s = 0;
-  //while(s<code.length()){
     if(code.at(s) == '1'){
       if(s==code.length()-1){
 	heapNode *n = new heapNode(1,c);
@@ -117,7 +113,6 @@ void fixTree(heapNode* node,string code,char c)
         fixTree(node->left,code,c);
       }
     }
-    //}
 }
 char trav(heapNode* node, char bits)
 {
@@ -127,13 +122,11 @@ char trav(heapNode* node, char bits)
     return node->getAlpha();
   else
     return '\0';
-  //return trav(node->right,bits.substr(1,bits.length()));
   }
 else{
   if(node->left==NULL)
     return node->getAlpha();
   else
     return '\0';
-      //return trav(node->left,bits.substr(1,bits.length()));
 		    }
 }

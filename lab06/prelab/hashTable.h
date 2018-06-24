@@ -15,6 +15,5 @@ class HashTable{
  private:
   int tableSize;
   int hashWord(string word);
-  //vector<list<string> > table;
 };
 #endif

@@ -34,31 +34,11 @@ int main (int argc, char **argv) {
   // Create the world, and select your itinerary                                     
   MiddleEarth me(width, height, num_cities, rand_seed);
   vector<string> dests = me.getItinerary(cities_to_visit);
-  //printRoute(dests.at(0),dests);                                                   
-  //sample string vector                                                             
-  //vector<string> s;       
-  // s.push_back("Charlotte");                                                       
-  // me.printTable();                                                                
-  //    me.print();                                                                  
-  // YOUR CODE HERE                                                                  
-  //        string first1 = dests.at(0);                                             
-  //    vector<string> print = dests;                                                
-  //    random_shuffle(dests.begin(),dests.end());                                   
-  //    for(int i=0;i<dests.size();i++){                                             
-  //cout<<dests.at(i)<<endl;                                                         
-  //}                                                                                
-  //cout<<endl;                                                                      
-  sort(dests.begin()+1,dests.end());
-  //    random_shuffle(dests.begin(),dests.end());                                   
-  //for(int i=0;i<dests.size();i++){                                                 
-  //cout<<dests.at(i)<<endl;                                                         
-  //}                                                                                
-  //cout<<endl;                                                                      
+  sort(dests.begin()+1,dests.end());                           
   string first = dests.at(0);
   float smallDist = computeDistance(me,first,dests);;
   float temp=0;
-  vector<string> print = dests;
-  //first = dests.at(0);                                                             
+  vector<string> print = dests;                                                 
   while(next_permutation(dests.begin()+1,dests.end())){
     temp = computeDistance(me,first,dests);
     if(temp<smallDist){
@@ -66,9 +46,7 @@ int main (int argc, char **argv) {
       smallDist = temp;
     }
   }
-
   first = print.at(0);
-  //  cout<<first<<endl;
   cout<<"Smallest distance: "<<smallDist<<endl;
   printRoute(first,print);
   return 0;
@@ -82,8 +60,7 @@ int main (int argc, char **argv) {
 /**
  *computes the distance from the starting city to all the other cities and back
  */
-float computeDistance (MiddleEarth &me, string start, vector<string> dests) {
-  // YOUR CODE HERE                                                                  
+float computeDistance (MiddleEarth &me, string start, vector<string> dests) {                         
   float dist=0.0;
   string begin = start;
   string last = dests.back();
@@ -100,13 +77,9 @@ float computeDistance (MiddleEarth &me, string start, vector<string> dests) {
  * 'start' parameter.  The output should be of the form:                               
  * Erebor -> Khazad-dum -> Michel Delving -> Bree -> Cirith Ungol -> Erebor            
  */
-void printRoute (string start, vector<string> dests) {
-  // YOUR CODE HERE                                                                  
+void printRoute (string start, vector<string> dests) {                                                               
   bool print = false;
   for(int i=0;i<dests.size();i++){
-    /*if(dests.at(i)==start)                                                           
-      print = true;                                                                    
-      if(print)*/
     cout<< dests.at(i)<<" -> ";
   }
   cout<<start<<endl;

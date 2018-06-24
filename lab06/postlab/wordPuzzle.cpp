@@ -39,10 +39,8 @@ int main(int argc, char *argv[])
   ifstream file2(dict.c_str());
   if ( !file2.is_open() )
     exit(1);
-  while(getline(file2,line)){
-    //getline(file,line);                                                     
-    num++;
-    //cout<< line<< " "<<line.length()<<endl;                                   
+  while(getline(file2,line)){                                                     
+    num++;                                   
   }
   file2.close();
   //load up words to dictList
@@ -58,7 +56,6 @@ int main(int argc, char *argv[])
   }
   // Get a word (of length 10), starting at position (2,2) in the             
   // array, in each of the 8 directions                                       
-  //cout << endl;
   string direct [8]= {"N", "NE", "E", "SE", "S", "SW", "W", "NW"};
   string output[30000];
   int pos = 0;
@@ -70,7 +67,6 @@ int main(int argc, char *argv[])
 	for(int l = 3; l<22; l++){
 	  string check=(getWordInGrid(i,j,k,l,rows,cols));
 	  if(dictList.checkWord(check)){
-	    //output[pos]=direct[k] + " " + "(" + to_string(i) + ", " + to_string(j) + "): " + check;
 	    cout << direct[k] << " " << "(" << i << ", " << j<< "): " << check \
 		 << endl;	    
 	    pos+=1;
@@ -82,13 +78,6 @@ int main(int argc, char *argv[])
     }
   }
   t.stop();
-  /*if(dictList.checkWord(""))
-    pos++;
-  for(int d =0;d<100003;d++)
-  cout<< dictList.table[d].back()<<endl;*/
-  /////////////////cout << pos<<" words found"<<endl;
- //cout << i << ": " << getWordInGrid(i,i,i,22,rows,cols) << endl;
-  //  cout << "Found all words in "<<(int)t.getTime()*1000 <<" miliseconds"<< endl;
   cout << (int)(t.getTime()*1000) <<endl;
   return 0;
 }
@@ -117,10 +106,8 @@ bool readInWords (string filename, HashTable &table)
   if ( !file.is_open() )
     return false;
   while(getline(file,line)){
-    //getline(file,line);
     word = line;
     table.insert(word);
-    //cout<< line<< " "<<line.length()<<endl;
   }
   file.close();
   return true;
@@ -136,11 +123,9 @@ bool readInGrid (string filename, int &rows, int &cols) {
     return false;
   // the first line is the number of rows: read it in                         
   file >> rows;
-  //cout << "There are " << rows << " rows." << endl;
   getline (file,line); // eats up the return at the end of the line           
   // the second line is the number of cols: read it in and parse it           
   file >> cols;
-  //cout << "There are " << cols << " cols." << endl;
   getline (file,line); // eats up the return at the end of the line           
   // the third and last line is the data: read it in                          
   getline (file,line);
@@ -153,9 +138,7 @@ bool readInGrid (string filename, int &rows, int &cols) {
   for ( int r = 0; r < rows; r++ ) {
     for ( int c = 0; c < cols; c++ ) {
       grid[r][c] = line[pos++];
-      //cout << grid[r][c];
     }
-    //cout << endl;
   }
   // return success!                                                          
   return true;

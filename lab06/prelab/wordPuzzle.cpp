@@ -47,7 +47,6 @@ int main(int argc, char *argv[])
   }
   // Get a word (of length 10), starting at position (2,2) in the             
   // array, in each of the 8 directions                                       
-  //cout << endl;
   string direct [8]= {"N", "NE", "E", "SE", "S", "SW", "W", "NW"};
   int pos = 0;
   timer t;
@@ -68,12 +67,7 @@ int main(int argc, char *argv[])
     }
   }
   t.stop();
-  /*if(dictList.checkWord(""))
-    pos++;
-  for(int d =0;d<100003;d++)
-  cout<< dictList.table[d].back()<<endl;*/
   cout << pos<<" words found"<<endl;
- //cout << i << ": " << getWordInGrid(i,i,i,22,rows,cols) << endl;
   cout << "Found all words in "<<t <<" seconds"<< endl;
   return 0;
 }
@@ -102,10 +96,8 @@ bool readInWords (string filename, HashTable &table)
   if ( !file.is_open() )
     return false;
   while(getline(file,line)){
-    //getline(file,line);
     word = line;
     table.insert(word);
-    //cout<< line<< " "<<line.length()<<endl;
   }
   file.close();
   return true;
@@ -121,11 +113,9 @@ bool readInGrid (string filename, int &rows, int &cols) {
     return false;
   // the first line is the number of rows: read it in                         
   file >> rows;
-  //cout << "There are " << rows << " rows." << endl;
   getline (file,line); // eats up the return at the end of the line           
   // the second line is the number of cols: read it in and parse it           
   file >> cols;
-  //cout << "There are " << cols << " cols." << endl;
   getline (file,line); // eats up the return at the end of the line           
   // the third and last line is the data: read it in                          
   getline (file,line);
@@ -138,9 +128,7 @@ bool readInGrid (string filename, int &rows, int &cols) {
   for ( int r = 0; r < rows; r++ ) {
     for ( int c = 0; c < cols; c++ ) {
       grid[r][c] = line[pos++];
-      //cout << grid[r][c];
     }
-    //cout << endl;
   }
   // return success!                                                          
   return true;

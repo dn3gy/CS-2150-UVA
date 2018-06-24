@@ -11,9 +11,7 @@ HashTable::HashTable(int s)
   list<string> list;
   for(int i=0; i<tableSize;i++)
     table.push_back(list);
-  //table(tableSize);
 }
-//vector<string> table(size);
 int hashWord(string word);
 void HashTable::insert(string word)
 {

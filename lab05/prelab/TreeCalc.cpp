@@ -21,17 +21,6 @@ TreeCalc::~TreeCalc() {
 
 //Deletes tree/frees memory
 void TreeCalc::cleanTree(TreeNode* ptr) {
-  /*TreeNode *n = new TreeNode();
-	if(ptr != NULL){
-	  TreeNode *l = ptr->left;
-	  TreeNode *r = ptr->right;
-	  n = ptr;
-	  delete n;
-	  if(l != NULL)
-	cleanTree(l);
-	  if(r != NULL)
-	    cleanTree(r);
-	}*/
   if(ptr){
     cleanTree(ptr->left);
     cleanTree(ptr->right);
@@ -94,7 +83,6 @@ void TreeCalc::printInfix(TreeNode* ptr) const {
     cout << "( ";
     printInfix(ptr->left);
   }
-  //  cout << "(";
   cout << ptr->value + " ";
   if(ptr->right != NULL){
     printInfix(ptr->right);
@@ -188,7 +176,6 @@ int TreeCalc::calculate() {
     int i = 0;
     // call private calculate method here
     i = calculate(mystack.top());
-    //delete mystack;
     del = mystack.top();
     mystack.pop();
     return i;

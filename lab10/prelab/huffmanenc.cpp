@@ -34,15 +34,9 @@ int main(int argc,char* argv[])
   }
   v.pop_back();
   orig=v;
-  // a nice pretty separator
-  //  cout << "----------------------------------------" << endl;
   // rewinds the file pointer, so that it starts reading the file
   // again from the begnning
   rewind(fp);
-  // read the file again, and print to the screen
-  // while ( (g = fgetc(fp)) != EOF )
-    // cout << g;
-  // close the file
   fclose(fp);
   f.push_back(1);
   std::sort(v.begin(),v.end());
@@ -66,8 +60,6 @@ int main(int argc,char* argv[])
     heapNode* num= new heapNode(f.at(i),v.at(c-1));
     h.insert(num);
   }
-  //  for(int i=0;i<v.size();i++)
-  //h.insert(num);
   int s =1;
   while(s<h.getSize()){
     heapNode* q = new heapNode();
@@ -79,7 +71,6 @@ int main(int argc,char* argv[])
     q->setCount(a);
     h.insert(q);
   }
-  //vector<int> code;
   string code="";
   map<char,string> look;
   printCode(h.findMin(),code,look);
@@ -97,11 +88,6 @@ int main(int argc,char* argv[])
   cout<<"Compression ratio of "<<(double)obits/nbits<<"\n";
   double cost=((double)nbits)/orig.size();
   cout<<"The cost of the huffman tree is "<<cost<<" "<<"bits per character."<<"\n";
-  //  cout<<h.findMin()->left->left->getAlpha()<<endl;
-//   cout<<  h.findMin()->getAlpha()<<endl;
-  //vector<heapNode*> o=h.getVect();
-  //  cout<<o.back()->getAlpha()<<endl;
-  //delete num;
   return 0;
 }
 string traverseCode(vector<int> v);
@@ -118,21 +104,6 @@ void printCode(heapNode* n,string c,map<char,string> &m)
   }
   printCode(n->left,c+"0",m);
   printCode(n->right,c+"1",m);
-  /*if(n->left){
-    c+="0";
-    printCode(n->left,c);
-  }
-  if(n->right){
-    c+="1";
-    printCode(n->right,c);
-  }
-  if(n->left==NULL && n->right==NULL){
-    //string x = traverseCode(c);
-    if((n->getAlpha())==32)
-      cout<<"space"<<" "<<c<<endl;
-    else
-      cout<<n->getAlpha()<<" "<<c<<endl;
-      }*/
 }
 string traverseCode(vector<int> v)
 {

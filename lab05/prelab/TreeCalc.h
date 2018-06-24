@@ -30,7 +30,7 @@ public:
     void printPostfix(TreeNode * curNode) const;//prints data in postfix form
     void printOutput() const;				//prints in pre,in,post form
     int calculate();					//calls private calculate method
-    //    stack<int> total;
+ 
 private:
     // declare a stack to hold your expression tree
     stack<TreeNode*> mystack;

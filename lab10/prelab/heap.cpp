@@ -34,7 +34,6 @@ void binary_heap::insert(heapNode * ptr) {
 
 void binary_heap::percolateUp(int  hole) {
     // get the value just inserted
-  //int hole = hole1->data;
     int x = heap[hole]->count;
     // while we haven't run off the top and while the
     // value is less than the parent...

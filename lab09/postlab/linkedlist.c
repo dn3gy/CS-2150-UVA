@@ -10,7 +10,7 @@ struct list{
   int size;
 };
 int main(){
-/*Read in an integer,n*/
+  //Read in an integer,n
   int n=0;
   printf("Enter an integer: ");
   scanf("%d",&n);

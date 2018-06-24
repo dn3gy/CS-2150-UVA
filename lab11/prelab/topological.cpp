@@ -50,12 +50,6 @@ int main (int argc, char **argv) {
      *a vector of courseNodes
      */
     vector <courseNode*> courses;
-    /*courseNode* c = new courseNode();
-    c->name = "CS 2110";
-    c->next = new courseNode();
-    c->next->name = "CS 2150";
-    courses.push_back(c);
-    cout << courses.at(0)->next->name<<endl;*/
     /**
      * loop goes through reading the whole file and saving as courseNodes      
      */
@@ -66,7 +60,6 @@ int main (int argc, char **argv) {
       file >> s1;
        if(s1 == "0")
 	 file >> s1;
-      //if( file >> s1 == '0')
        if(s1 == "0")
 	  break;
        courseNode* c = new courseNode();
@@ -121,29 +114,16 @@ int main (int argc, char **argv) {
 	   courses.push_back(r);
 	 }
        }
-       //       cout << s1 << endl;
     }
-    // read in two strings
-    //    string s1, s2, s3;
-    //file >> s1;
-    // file >> s2;
-    //file >> s3;
-    // output those strings
-    //cout << s1 << endl;
-    //cout << s2 << endl;
-    //cout << s3 << endl;
     // string comparison done with ==, but not shown here
     // close the file before exiting
     file.close();
     courseNode* f;
     for(int i=0;i<courses.size();i++){
-      //cout << courses.at(i)->name << " "<<endl;
       f= courses.at(i)->next;
       while(f){
-	//cout<< f->name << " "<<endl;
 	f= f->next;
       }
-      //      cout<< endl;
     }
     int matrix[courses.size()][courses.size()];
     for(int i =0;i<courses.size();i++){
@@ -152,10 +132,6 @@ int main (int argc, char **argv) {
     }
     }
     for(int i=0;i<courses.size();i++){
-      //for(int j=0;j<courses.size();j++){
-	//if(j==i)
-	  //matrix[i][j]=0;
-	//else{
 	  stack<courseNode*> s;
 	  courseNode* node = courses.at(i)->next;
 	  while(node){
@@ -166,21 +142,12 @@ int main (int argc, char **argv) {
 	    for(int k=0;k<courses.size();k++){
 	      if(s.top()->name == courses.at(k)->name){
 		matrix[i][k]=1;
-		//cout<<s.top()->name<<" ";
 	      }
 	      if(i==k)
 		matrix[i][k]=0;
 	    }
 	    s.pop();
 	  }
-	  // }
-	  //}
-    }
-    for(int i=0;i<courses.size();i++){
-      for(int j=0;j<courses.size();j++){
-	//cout << matrix[i][j];
-      }
-      //cout<<endl;
     }
     int row =0;
     int col =0;
